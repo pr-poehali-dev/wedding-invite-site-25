@@ -3,6 +3,7 @@ import HeroSection from "@/components/wedding/HeroSection";
 import DetailsSection from "@/components/wedding/DetailsSection";
 import StorySection from "@/components/wedding/StorySection";
 import GallerySection from "@/components/wedding/GallerySection";
+import DressCodeSection from "@/components/wedding/DressCodeSection";
 import RsvpSection from "@/components/wedding/RsvpSection";
 import ContactsSection from "@/components/wedding/ContactsSection";
 
@@ -14,6 +15,7 @@ const Index = () => {
       <DetailsSection />
       <StorySection />
       <GallerySection />
+      <DressCodeSection />
       <RsvpSection />
       <ContactsSection />
     </main>

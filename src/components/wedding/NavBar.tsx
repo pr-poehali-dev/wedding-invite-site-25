@@ -4,6 +4,7 @@ const navLinks = [
   { href: "#details", label: "Детали" },
   { href: "#story", label: "История" },
   { href: "#gallery", label: "Фото" },
+  { href: "#dresscode", label: "Дресс-код" },
   { href: "#rsvp", label: "Присутствие" },
   { href: "#contacts", label: "Контакты" },
 ];
