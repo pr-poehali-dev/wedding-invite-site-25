@@ -25,9 +25,9 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/ef4bcb69-51d4-45f4-9287-f91a2e863664/files/d63d36d2-b154-4594-8da6-837ea3808240.jpg')" }}
+        style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/ef4bcb69-51d4-45f4-9287-f91a2e863664/bucket/f2416ff9-8eb6-4b8d-adc1-2685043e77ff.jpeg')" }}
       />
-      <div className="hero-overlay absolute inset-0" />
+      <div className="absolute inset-0" style={{ background: "rgba(245,243,240,0.45)" }} />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <p className="font-script text-5xl md:text-7xl text-gold mb-2 animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>
