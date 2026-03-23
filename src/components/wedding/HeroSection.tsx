@@ -25,9 +25,13 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/ef4bcb69-51d4-45f4-9287-f91a2e863664/bucket/f2416ff9-8eb6-4b8d-adc1-2685043e77ff.jpeg')" }}
+        style={{
+          backgroundImage: "url('https://cdn.poehali.dev/projects/ef4bcb69-51d4-45f4-9287-f91a2e863664/bucket/9ebebe6a-a67a-4cd1-b115-3c0aabde2990.png')",
+          animation: "silkPan 18s ease-in-out infinite alternate",
+          backgroundSize: "150%",
+        }}
       />
-      <div className="absolute inset-0" style={{ background: "rgba(245,243,240,0.45)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(245,240,235,0.38)" }} />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <p className="font-script text-5xl md:text-7xl text-gold mb-2 animate-fade-in-up opacity-0" style={{ animationFillMode: 'forwards' }}>

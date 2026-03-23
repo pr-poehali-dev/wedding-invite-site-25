@@ -132,6 +132,24 @@
     }
   }
 
+  @keyframes silkPan {
+    0% {
+      background-position: 20% 30%;
+    }
+    25% {
+      background-position: 65% 15%;
+    }
+    50% {
+      background-position: 80% 65%;
+    }
+    75% {
+      background-position: 35% 80%;
+    }
+    100% {
+      background-position: 20% 30%;
+    }
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
