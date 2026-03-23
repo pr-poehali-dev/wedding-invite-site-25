@@ -7,15 +7,17 @@ const contacts = [
     person: "Андрей",
     role: "Жених",
     emoji: "🤵",
-    phone: "+7 (900) 000-00-01",
-    telegram: "@andrey_wedding",
+    phone: "+7 (910) 340-20-96",
+    vk: "https://vk.ru/abtsariov",
+    vkLabel: "vk.ru/abtsariov",
   },
   {
     person: "Анастасия",
     role: "Невеста",
     emoji: "👰",
-    phone: "+7 (900) 000-00-02",
-    telegram: "@anastasia_wedding",
+    phone: "+7 (910) 749-29-33",
+    vk: "https://vk.ru/draumur",
+    vkLabel: "vk.ru/draumur",
   },
 ];
 
@@ -34,7 +36,7 @@ const ContactsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {contacts.map(({ person, role, emoji, phone, telegram }, i) => (
+          {contacts.map(({ person, role, emoji, phone, vk, vkLabel }, i) => (
             <div key={person} className={`reveal reveal-delay-${i + 1} bg-white rounded-3xl p-8 shadow-sm border border-stone-100 text-center`}>
               <div className="text-5xl mb-4">{emoji}</div>
               <h3 className="font-serif-elegant text-2xl text-stone-700 font-semibold">{person}</h3>
@@ -49,13 +51,13 @@ const ContactsSection = () => {
                   {phone}
                 </a>
                 <a
-                  href={`https://t.me/${telegram.replace("@", "")}`}
+                  href={vk}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 py-3 px-6 border border-stone-200 rounded-xl text-stone-600 hover:border-amber-400 hover:text-amber-600 transition-all font-serif-elegant"
                 >
-                  <Icon name="MessageCircle" size={18} />
-                  {telegram}
+                  <Icon name="ExternalLink" size={18} />
+                  {vkLabel}
                 </a>
               </div>
             </div>

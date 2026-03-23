@@ -6,6 +6,7 @@ import GallerySection from "@/components/wedding/GallerySection";
 import DressCodeSection from "@/components/wedding/DressCodeSection";
 import RsvpSection from "@/components/wedding/RsvpSection";
 import ContactsSection from "@/components/wedding/ContactsSection";
+import MusicPlayer from "@/components/wedding/MusicPlayer";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <DressCodeSection />
       <RsvpSection />
       <ContactsSection />
+      <MusicPlayer />
     </main>
   );
 };
