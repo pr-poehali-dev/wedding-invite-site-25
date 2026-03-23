@@ -1,4 +1,6 @@
+import React from "react";
 import Icon from "@/components/ui/icon";
+import { useReveal } from "@/hooks/useReveal";
 
 const contacts = [
   {
@@ -18,20 +20,22 @@ const contacts = [
 ];
 
 const ContactsSection = () => {
+  const ref = useReveal();
+
   return (
-    <section className="py-24 bg-stone-50 px-6" id="contacts">
+    <section className="py-24 bg-stone-50 px-6" id="contacts" ref={ref as React.RefObject<HTMLElement>}>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <p className="font-script text-4xl text-gold mb-3">Связаться с нами</p>
           <div className="section-divider max-w-xs mx-auto" />
-          <p className="font-serif-elegant text-stone-500 text-lg mt-4">
+          <p className="text-stone-500 text-base mt-4">
             Если у вас есть вопросы — мы всегда на связи
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {contacts.map(({ person, role, emoji, phone, telegram }) => (
-            <div key={person} className="bg-white rounded-3xl p-8 shadow-sm border border-stone-100 text-center">
+          {contacts.map(({ person, role, emoji, phone, telegram }, i) => (
+            <div key={person} className={`reveal reveal-delay-${i + 1} bg-white rounded-3xl p-8 shadow-sm border border-stone-100 text-center`}>
               <div className="text-5xl mb-4">{emoji}</div>
               <h3 className="font-serif-elegant text-2xl text-stone-700 font-semibold">{person}</h3>
               <p className="text-stone-400 font-serif-elegant text-sm tracking-widest uppercase mb-6">{role}</p>
@@ -58,7 +62,7 @@ const ContactsSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center bg-white border border-stone-100 rounded-3xl py-10 px-6 shadow-sm">
+        <div className="mt-16 text-center bg-white border border-stone-100 rounded-3xl py-10 px-6 shadow-sm reveal reveal-delay-3">
           <p className="font-script text-3xl text-gold mb-3">С любовью,</p>
           <p className="font-serif-elegant text-2xl text-stone-700">Андрей & Анастасия</p>
           <p className="text-stone-400 mt-3 font-serif-elegant">08 · 08 · 2026 · Воронеж</p>

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Icon from "@/components/ui/icon";
+import { useReveal } from "@/hooks/useReveal";
 
 const images = [
   {
@@ -31,24 +32,25 @@ const images = [
 
 const GallerySection = () => {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const ref = useReveal();
 
   const prev = () => setLightbox((i) => (i !== null ? (i - 1 + images.length) % images.length : null));
   const next = () => setLightbox((i) => (i !== null ? (i + 1) % images.length : null));
 
   return (
-    <section className="py-24 bg-cream px-6" id="gallery">
+    <section className="py-24 bg-cream px-6" id="gallery" ref={ref as React.RefObject<HTMLElement>}>
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <p className="font-script text-4xl text-gold mb-3">Фотографии</p>
           <div className="section-divider max-w-xs mx-auto" />
-          <p className="font-serif-elegant text-stone-500 text-lg mt-4">Моменты нашей совместной жизни и подготовки к торжеству</p>
+          <p className="text-stone-500 text-base mt-4">Наши совместные моменты</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map(({ src, alt, caption }, i) => (
             <div
               key={alt}
-              className={`overflow-hidden rounded-2xl shadow-md group cursor-pointer relative ${i === 0 ? "col-span-2 md:col-span-2 row-span-1" : ""}`}
+              className={`reveal reveal-delay-${i + 1} overflow-hidden rounded-2xl shadow-md group cursor-pointer relative ${i === 0 ? "col-span-2 md:col-span-2" : ""}`}
               onClick={() => setLightbox(i)}
             >
               <img

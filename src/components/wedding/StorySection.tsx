@@ -1,42 +1,47 @@
+import React from "react";
+import { useReveal } from "@/hooks/useReveal";
+
 const story = [
   {
     year: "2024",
     emoji: "🏊",
     title: "Первая встреча",
-    text: "13 июля 2024 года на бассейне Val de bo судьба свела нас вместе. Тот солнечный день изменил всё — с этого момента мы не расстаёмся.",
+    text: "13 июля 2024 года на бассейне Val de bo судьба свела их вместе. Тот солнечный день изменил всё — с этого момента они не расстаются.",
     align: "left",
   },
   {
     year: "2024",
     emoji: "🌹",
     title: "Первое свидание",
-    text: "Андрей пригласил меня в ресторан, а после мы гуляли по городу так долго, что у меня загудели ноги от усталости. Мы сели у фонтана и говорили обо всём — о мечтах, желаниях, планах на будущее. Тогда стало ясно: этот человек — мой.",
+    text: "Андрей пригласил Анастасию в ресторан, а после они гуляли по городу так долго, что у неё загудели ноги от усталости. Они сели у фонтана и говорили обо всём — о мечтах, желаниях, планах на будущее. Тогда стало ясно: это именно тот человек.",
     align: "right",
   },
   {
     year: "2025",
     emoji: "💍",
     title: "Предложение",
-    text: "В горах Карачаево-Черкесии, на курорте Архыз, среди заснеженных вершин Андрей встал на одно колено. Это было невероятно романтично — и ответ был «Да!» без единого сомнения.",
+    text: "В горах Карачаево-Черкесии, на курорте Архыз, среди заснеженных вершин Андрей сделал Анастасии предложение. Это было невероятно романтично — и ответ был «Да!» без единого сомнения.",
     align: "right",
   },
   {
     year: "2026",
     emoji: "👰🤵",
     title: "Свадьба",
-    text: "И вот мы приглашаем самых близких разделить с нами этот счастливый день — 8 августа 2026 года в Воронеже.",
+    text: "И вот они приглашают самых близких разделить с ними этот счастливый день — 8 августа 2026 года в Воронеже.",
     align: "left",
   },
 ];
 
 const StorySection = () => {
+  const ref = useReveal();
+
   return (
-    <section className="py-24 bg-white px-6" id="story">
+    <section className="py-24 bg-white px-6" id="story" ref={ref as React.RefObject<HTMLElement>}>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <p className="font-script text-4xl text-gold mb-3">Наша история</p>
           <div className="section-divider max-w-xs mx-auto" />
-          <p className="font-serif-elegant text-stone-500 text-lg mt-4">История, которая началась случайно, но стала самой важной в нашей жизни</p>
+          <p className="text-stone-500 text-base mt-4">История, которая началась случайно, но стала самой важной в их жизни</p>
         </div>
 
         <div className="relative">
@@ -46,7 +51,7 @@ const StorySection = () => {
             {story.map(({ year, emoji, title, text, align }, i) => (
               <div
                 key={i}
-                className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
+                className={`reveal reveal-delay-${i + 1} flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
                   align === "right" ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -54,7 +59,7 @@ const StorySection = () => {
                   <div className="bg-stone-50 border border-stone-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <span className="text-3xl">{emoji}</span>
                     <h3 className="font-serif-elegant text-xl text-stone-700 font-semibold mt-2 mb-2">{title}</h3>
-                    <p className="text-stone-500 text-sm leading-relaxed">{text}</p>
+                    <p className="text-stone-500 text-[15px] leading-relaxed">{text}</p>
                   </div>
                 </div>
 
